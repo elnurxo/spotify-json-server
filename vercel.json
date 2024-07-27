@@ -1,8 +1,14 @@
 {
   "functions": {
     "api/server.js": {
-      "runtime": "nodejs18.x"
+      "memory": 1024,
+      "includeFiles": "db.json"
     }
   },
-  "public": true
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "api/server.js"
+    }
+  ]
 }
